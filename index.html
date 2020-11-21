@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>fillFrame.js</title>
+    
+</head>
+
+<body>
+    <h1>fillFrame</h1>
+
+    <div id="design-area">
+
+        <div id="navigation">
+            <div class="nav-items" id="addShape">Shapes</div>
+            <!-- <div class="nav-items">Time</div> -->
+            <div class="nav-items" id="addFrame">Add Frame</div>
+            <div class="nav-items" id="getPreview">Preview</div>
+        </div>
+        <canvas id="design-canvas"></canvas>
+
+        <!-- For small circle -->
+        <div id="object-property">
+
+            <div id="initial"></div>
+
+            <!-- <div class= "property-item" id="name">
+                <label for="object-name">name</label>
+                <input type="text">
+            </div>
+
+            <div class= "property-item" id="type">
+                <label for="object-type">type</label>
+                <input type="text">
+            </div>
+
+            <div class= "property-item" id="radius">
+                <label for="object-radius">Radius</label>
+                <input type="text">
+            </div> -->
+
+            <div id="temporal"></div>
+                
+            <!-- <div class= "property-item" id="X-Coordinate">
+                <label for="X-coordinate">X</label>
+                <input type="text">
+            </div>
+            
+            <div class= "property-item" id="Y-Coordinate">
+                <label for="X-coordinate">Y</label>
+                <input type="text">
+            </div>
+                
+                
+            
+
+            <div class= "property-item" id="color">
+                <h3>Colour</h3>
+                <input type="color">
+            </div>
+
+            <div class= "property-item" id="time">
+                <label for="object-type">Starting Time</label>
+                <input type="text">
+            </div> -->
+
+        </div>
+
+    </div>
+
+    <div>
+        <h2>Preview</h2>
+        <div id="frameset">
+            
+        </div>
+    </div>
+
+    
+
+    <canvas id="preview"></canvas>
+
+    <script type="module" type="text/javascript" src="scripts/parser.js"></script>
+    <!-- type = "module" firefox cannot deal with module unless specified explicitly -->
+
+    <!-- cannot find module : import name with extension -->
+</body>
+</html>
