@@ -63,7 +63,7 @@ function animate(
   }
   // console.log(time, currentStateArray);
   // visualize("preview", initialState, currentState);
-  visualizeMulti("preview", initialState, currentStateArray);
+  visualizeMulti("design-canvas", initialState, currentStateArray);
 
   if (time < endTime) {
     window.requestAnimationFrame(() => {
