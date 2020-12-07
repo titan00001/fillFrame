@@ -14,17 +14,22 @@
     <div id="design-area">
 
         <div id="navigation">
-            <div class="nav-items" id="addShape">Shapes</div>
+            <div class="nav-items" id="addShape">
+                <p>Shapes</p>
+                <p id="addCircle">Circle</p>
+
+            </div>
             <!-- <div class="nav-items">Time</div> -->
             <div class="nav-items" id="addFrame">Add Frame</div>
             <div class="nav-items" id="getPreview">Preview</div>
+            <div id="initial"></div>
         </div>
         <canvas id="design-canvas"></canvas>
 
         <!-- For small circle -->
         <div id="object-property">
 
-            <div id="initial"></div>
+            
 
             <!-- <div class= "property-item" id="name">
                 <label for="object-name">name</label>
@@ -81,7 +86,9 @@
 
     <canvas id="preview"></canvas>
 
-    <script type="module" type="text/javascript" src="scripts/parser.js"></script>
+    <!-- <script type="module" type="text/javascript" src="scripts/parser.js"></script> -->
+    <script type="module" type="text/javascript" src="test/testParser.js"></script>
+
     <!-- type = "module" firefox cannot deal with module unless specified explicitly -->
 
     <!-- cannot find module : import name with extension -->

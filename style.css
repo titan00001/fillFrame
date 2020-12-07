@@ -1,87 +1,103 @@
 * {
-    margin: 0;
-    border: 0;
+  margin: 0;
+  border: 0;
 }
 
 #design-area {
+  height: 60vh;
+  display: grid;
+  grid-template-columns: auto 50vw auto;
 
-
-    height: 70vh;
-
-    display: grid;
-    grid-template-columns: 12vw auto 25vw;
-    /* test */
-    /* background-color: darkgray; */
 }
 
 /* test */
 canvas {
-    /* background-color: beige; */
-    border: 2px solid darkgray;
+  /* background-color: beige; */
+  border: 2px solid darkgray;
 }
 
-
 #navigation {
-
-    display: flex;
-    flex-direction: column;
-    width: 12vw;
+  display: flex;
+  flex-direction: column;
+  /* width: 12vw; */
 }
 
 .nav-items {
-    text-align: center;
-    flex-basis: 10vh;
-    /* test */
-    background-color: rgba(0, 0, 256, 0.4);
-    border: 1px solid darkblue;
+  text-align: center;
+  /* flex-basis: 10vh; */
+  /* test */
+  background-color: rgba(0, 0, 256, 0.4);
+  border: 1px solid darkblue;
 }
 
 #design-canvas {
-    height: 40vh;
-    
+  height: 40vh;
 }
 
 #frameset {
-    
-    height: 15vh;
-    display: flex;
-    width: fit-content;
+  height: 15vh;
+  display: flex;
+  width: fit-content;
+  flex-wrap: wrap;
+  margin: 5px 0 2vh 0;
+}
+
+.frame-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 18vw;
+  margin: 0 3px;
+}
+
+.frame-selected {
+    border: 2px solid black;
+}
+
+.frame-controller {
+  display: flex;
+  flex-direction: row;
 }
 
 #object-property {
-    
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: row;
 
-    background-color: rgba(128, 128, 128, 0.1);
-    
+  background-color: rgba(128, 128, 128, 0.1);
 }
 
 .property-item {
 
-    margin: 2vh 0;
-
-    height: fit-content;
-
-    text-align: center;
+  display: flex;
+  flex-direction: row;
+  margin: 2vh 2vw;
+  height: fit-content;
+  text-align: center;
+  
 }
 
-input[type = 'text'] {
-
-    border-bottom: 1px solid darkgray;
-    background-color: inherit;
-
-    text-align: center;
+#initial {
+    max-height: 40vh;
+    min-width: 12vw;
+    overflow-x: auto;
 }
 
-.frame {
-    
-    /* height: 15vh; */
-    max-width: 15vw;
-    flex-basis: 30vw;
+input[type="text"] {
+  border-bottom: 1px solid darkgray;
+  background-color: inherit;
+  width: 6vw;
+  text-align: center;
 }
+
+.object-property-input {
+  width: 5vw;
+}
+
+/* .frame {
+  height: 15vh;
+  max-width: 15vw;
+  flex-basis: 30vw;
+} */
 
 /* #preview {
     display: none;
 } */
-

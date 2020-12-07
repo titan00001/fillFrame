@@ -5,7 +5,7 @@ import {visualize, visualizeAnimation} from './visualiser.js';
 // for testing purpose
 
 
-var data = new Circle('Circle1', 'circle', 40);
+var data = new Circle('Circle1', 'circle', 20);
 var selectedFrame = 0;
 
 const shapeButton = document.querySelector("#addShape");

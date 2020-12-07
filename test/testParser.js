@@ -1,0 +1,108 @@
+import { frameSetSingleton } from "../scripts/UIcomponents/frameset.js";
+// import {data2} from './engineTest.js';
+import { objectSingleton, pathObject } from "../scripts/objectProperties.js";
+import { getPath } from '../scripts/engine.js';
+import { visualizeAnimation } from '../scripts/visualiser.js';
+
+
+let superObject = objectSingleton.getInstance();
+
+// superObject.addObject();
+
+// console.log(superObject.getTemporalDataById(0));
+
+// {'posX': posX, 'posY': posY, 'time': time}
+
+// let instantProperty1 = [{'posX': 40, 'posY': 45, 'time': 2},
+//     {'posX': 120, 'posY': 125, 'time': 2},
+//     {'posX': 70, 'posY': 100, 'time': 2}
+// ];
+// superObject.addTemporalData(1, instantProperty1);
+
+// let instantProperty2 = [{'posX': 50, 'posY': 45, 'time': 4},
+//     {'posX': 100, 'posY': 125, 'time': 4},
+//     {'posX': 80, 'posY': 100, 'time': 4}
+// ];
+// superObject.addTemporalData(2, instantProperty2);
+
+// superObject.removeTemporalDataById(0);
+
+let frames = frameSetSingleton.getInstance(superObject);
+
+// frames.addFrame();
+// frames.addFrame();
+// frames.addFrame();
+
+superObject.observer.subscribe(frames);
+
+// frames.display();
+
+// test: changing the parameter of passed object modifies the origignal object-> true
+// work-around: create the deep copy of object to separate the changes when modifying
+
+const addFrame = document.querySelector("#addFrame");
+addFrame.addEventListener("click", () => {
+  console.log(superObject);
+});
+
+const addCircle = document.querySelector("#addCircle");
+addCircle.addEventListener("click", () => {
+  if (superObject.getTemporalCount() < 2) {
+    console.log("added circle");
+    superObject.addObject();
+    superObject.onUpdate();
+  } else {
+    console.log("Cannot add object in more than 1 slide.");
+  }
+});
+
+const getPreviewBtn = document.querySelector("#getPreview");
+getPreviewBtn.addEventListener('click', () => {
+  
+  const clonedSuperObject = superObject.getClone();
+
+  for(let i = 0; i < superObject.objectCount; i++) {
+    clonedSuperObject[i]['temporal'] = getPath(clonedSuperObject[i]['temporal']);
+  }
+
+  // console.log(getTemporalDataById(clonedSuperObject, clonedSuperObject.length, 0));
+  const pathObject1 = new pathObject(clonedSuperObject);
+  // console.log(pathObject1, pathObject1.getTemporalLength(), pathObject1.getObjectCount);
+
+  visualizeAnimation(pathObject1);
+
+
+});
+
+/* TypeError: cyclic object value */
+
+
+console.log("Todo List");
+console.log(
+  "Done: Change time view: remove time visibility from temporal data, change timeLabel to input box in frameset"
+);
+console.log("Done: Add title of temporal and initial to respective container");
+console.log(
+  "Done: add change on keypress event functionality on timeInput, improved it by changing all keypress event with focusout"
+);
+console.log(
+  "Done: style the webpage: css, setAttributes, inline css. \n 1. Change initial Data view position to navbar \n 2. highlight selected frame and object"
+);
+console.log("Done: style navbar: add shapes, preview, view initial Data");
+console.log("Done: Added radius to temporal property array of circle");
+console.log("Done: Make prototype class with relevant function");
+console.log("build hide and remove object functionality");
+console.log("change object class to keep track of shapes added into it");
+console.log("add functions to make multiple shapes");
+console.log(
+  "Done: build preview engine to animate multiple object, currently supports single object"
+);
+console.log(
+  "add option to change the position of object using mouse: designCanvas, opbject updation"
+);
+
+// Test: singleton function
+// let object1 = frameSetSingleton.getInstance(superObject);
+// let object2 = frameSetSingleton.getInstance(superObject);
+
+// console.log(object1 === object2);
