@@ -128,7 +128,8 @@ class frameSet {
     const removeBtn = document.createElement("button");
     const timeInput = document.createElement("input");
     timeInput.setAttribute("type", "text");
-    timeInput.setAttribute('maxlength', 1);
+    // timeInput.setAttribute('maxlength', 1); 
+    // above code only permits single digit time
 
     addBtn.textContent = "Add";
     removeBtn.textContent = "Remove";
