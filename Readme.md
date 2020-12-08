@@ -83,4 +83,14 @@ animation loop -> visualizer ->  display on canvas
 - OOP pattern: separate object and component
 
 # Specs for phase 3:
-- 
+
+
+
+
+
+# Bugs
+1. Selected object reverts back to point the first object in Initial property container, on **updating Temporal property** and **changing frame count**.
+2. Selected object reverts back to point the first object in Initial property container, on **addition of shapes**.
+3. Design pane **calling both** initial and temporal component, whereas temporal property component is strictly child of initial property component.
+4. **Not showing alert** to user on window.
+5. Temporal property container **falls behind** the design canvas on resizing of window.
