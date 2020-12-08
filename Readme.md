@@ -89,8 +89,8 @@ animation loop -> visualizer ->  display on canvas
 
 
 # Bugs
-1. Selected object reverts back to point the first object in Initial property container, on **updating Temporal property** and **changing frame count**.
+1. [x] Selected object reverts back to point the first object in Initial property container, on **updating Temporal property** and **changing frame count**.
 2. Selected object reverts back to point the first object in Initial property container, on **addition of shapes**.
-3. Design pane **calling both** initial and temporal component, whereas temporal property component is strictly child of initial property component.
+3. [x] Design pane **calling both** initial and temporal component, whereas temporal property component is strictly child of initial property component.
 4. **Not showing alert** to user on window.
 5. Temporal property container **falls behind** the design canvas on resizing of window.

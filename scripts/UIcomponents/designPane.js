@@ -13,8 +13,9 @@ separate function for initial ad temporal data
 
 class designPane {
   // initial, current temporal data of object listed in superobject
-  constructor(displayData, currentSelected) {
+  constructor(displayData, currentSelected, selectedObject) {
     this.currentSelected = currentSelected;
+    this.selectedObject = selectedObject;
     this.initialDataPane = new initialDataComponent(
       displayData["initial"],
       displayData["current"]
@@ -44,18 +45,19 @@ class designPane {
     // const addCircle = document.querySelector
   }
 
-  update(displayData, currentSelected) {
+  update(displayData, currentSelected, newSelectedObject) {
     this.initialData = displayData["initial"];
     this.temporalData = displayData["current"];
     this.currentSelected = currentSelected;
-
+    this.selectedObject = newSelectedObject;
+    // console.log(this.selectedObject);
     // this.initialDataComponent.update(this.initialData);
     // this.temporalDataPane.update(this.temporalData);
-    this.initialDataPane.update(this.initialData, this.temporalData);
+    this.initialDataPane.update(this.initialData, this.temporalData, this.selectedObject);
 
     this.displayCanvas();
     this.displayInitialDataPane();
-    this.displayTemporalDataPane();
+    // this.displayTemporalDataPane();
   }
 }
 

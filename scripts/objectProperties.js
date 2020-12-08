@@ -67,9 +67,9 @@ class object {
     }
   }
 
-  onUpdate() {
-    this.observer.notifyAll();
-    // console.log("updated");
+  onUpdate(retainedProperty) {
+    this.observer.notifyAll(retainedProperty);
+    // console.log(retainedProperty);
   }
 
   changeTimeById(id, newTime) {
@@ -171,9 +171,9 @@ class objectObserver {
     });
   }
 
-  notifyAll() {
+  notifyAll(retainedProperty) {
     for (let observer of this.subscriberList) {
-      observer.notify();
+      observer.notify(retainedProperty);
     }
   }
 }

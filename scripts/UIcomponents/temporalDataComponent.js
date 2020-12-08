@@ -6,6 +6,7 @@ property
 import { objectSingleton } from "../objectProperties.js";
 const object1 = objectSingleton.getInstance();
 
+
 class temporalDataComponent {
   constructor(temporalDataList, currentObjectSelected) {
     this.temporalDataList = temporalDataList;
@@ -14,15 +15,17 @@ class temporalDataComponent {
     console.log(this.temporalDataList);
   }
 
-  update(temporalDataList) {
+  update(temporalDataList, selectedObjectId) {
     this.temporalDataList = temporalDataList;
+    this.changeSelection(selectedObjectId);
+    console.log(selectedObjectId);
     this.display();
   }
 
   changeSelection(currentObjectSelected) {
     this.currentObjectSelected = currentObjectSelected;
     // console.log(this.temporalDataList);
-    this.display();
+    // this.display();
   }
 
   display() {
@@ -75,13 +78,10 @@ class temporalDataComponent {
       //   input.value + e.key
       // );
 
-      console.log(input.value);
+      console.log(input.value, this.currentObjectSelected);
 
-      setTimeout(() => {
-        object1.onUpdate();
-        // pass relevant state: todo
-        // relavant selected frame, selected object
-      }, 100);
+      object1.onUpdate({"currentObject" : this.currentObjectSelected});
+      
     });
 
     container.appendChild(label);

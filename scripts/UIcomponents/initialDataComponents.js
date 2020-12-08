@@ -1,8 +1,8 @@
 import { objectSingleton } from "../objectProperties.js";
-// import { frameSetSingleton } from "./frameset.js";
+
 
 import { temporalDataComponent } from "./temporalDataComponent.js";
-
+const object1 = objectSingleton.getInstance();
 /*
 
     hide or show: visualize
@@ -33,12 +33,12 @@ class initialDataComponent {
     );
   }
 
-  update(initialDataList, temporalDataList) {
+  update(initialDataList, temporalDataList, newSelectedObject) {
     this.initialDataList = initialDataList;
     this.temporalDataList = temporalDataList;
-    this.selectedObjectId = 0;
-
-    this.temporalComponent.update(this.temporalDataList);
+    this.selectedObjectId = newSelectedObject;
+    // console.log(this.selectedObjectId);
+    this.temporalComponent.update(this.temporalDataList, this.selectedObjectId);
     this.display();
   }
 
@@ -105,10 +105,13 @@ class initialDataComponent {
 
     selectBtn.addEventListener("click", () => {
       this.selectedObjectId = itemId;
-      this.display();
+      // this.display();
 
       console.log(itemId + ": selectedObjectId");
-      this.temporalComponent.changeSelection(itemId);
+      // this.temporalComponent.changeSelection(itemId);
+      // this.update(this.initialDataList, this.temporalDataList, itemId);
+
+      object1.onUpdate({"currentObject" : this.selectedObjectId});
     });
 
     // container.appendChild(label);

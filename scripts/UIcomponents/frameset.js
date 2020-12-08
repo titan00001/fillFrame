@@ -8,6 +8,7 @@ class frameSet {
     this.parentNode = parentNode;
 
     this.frameCount = superObject.getTemporalCount();
+    this.selectedObject = selectedObject;
 
     this.designPane = new designPane(
       this.displayCurrentFrame(),
@@ -98,16 +99,22 @@ class frameSet {
     const currentFrame = document.getElementById(newSelect);
     if(currentFrame !== null) {
         this.selectedFrameId = newSelect;
-        // console.log(this.selectedFrameId);
+        console.log(this.selectedFrameId, this.selectedObject);
         currentFrame.classList.add('class','frame-selected');
-    this.designPane.update(this.displayCurrentFrame(), this.selectedFrameId);
+    this.designPane.update(this.displayCurrentFrame(), this.selectedFrameId, this.selectedObject);
     }
     
   }
 
-  notify() {
-    // console.log("I was notified");
-    this.setSelect(this.selectedFrameId);
+  notify(retainedProperty) {
+    // console.log(retainedProperty);
+    // this.setSelect(this.selectedFrameId, retainedProperty);
+    if(retainedProperty !== undefined && retainedProperty["currentObject"] !== undefined){
+      this.selectedObject = retainedProperty["currentObject"];
+      // console.log(this.selectedObject);
+    } else {
+      this.selectedObject = 0;
+    }
 
     this.display();
   }
