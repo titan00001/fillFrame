@@ -7,9 +7,7 @@
 # Use cases
 
 - Insert frame, delete unwanted frame.
-
 - Edit properties of object, ie, its location, colour, geometry etc.
-
 - On clicking preview mode, users shall experience their own still-frames coming to life.
 
 
@@ -47,14 +45,14 @@ animation loop -> visualizer ->  display on canvas
 ---
 **phase 2**
 - [x] create a class of circle, with functionality
-- create class of frameset and object designPane
+- [x] create class of frameset and object designPane
   - [x] frameset: time, object property, selectedFrame
   - [x] behaviour: selectFrame, add frame, remove frame 
   - [x] designPane: object Property, selected object
   - [x] behaviour: edit object property
-- refactor visualize : 
-  - add for many objects drawing, 
-  - adjust frame for depicting multiple objects
+- [ ] refactor visualize : 
+  - [ ] add for many objects drawing, 
+  - [ ] adjust frame for depicting multiple objects
 ---
 
 # Thoughts on React.js
@@ -80,11 +78,22 @@ animation loop -> visualizer ->  display on canvas
 - [x] animate the preview
 - [x] object property window displays all temporal property of selected frame
 - [x] object Property window helps in editing the property of object
-- OOP pattern: separate object and component
+- [x] OOP pattern: separate object and component
 
 # Specs for phase 3:
-
-
+1. [ ] Add trapezium shape
+  1. [ ] Add coordinates
+  2. [ ] Remove coordinates
+  3. [ ] Edit coordinates
+2. [] Add line
+  1. [ ] Add line class in geometry
+  2. [ ] make getShape function to delegate instatiation based on factory pattern
+  3. [ ] Make shape class as abstract class
+3. [ ] Add visualization for line
+4. [ ] Show the object/ hide the object across all frame
+5. [ ] Delete the object across all the frames
+6. [ ] Add different path to choose from: linear, radial, exponential, logarithmic
+7. [ ] Add rotation functionality by engine.
 
 
 
