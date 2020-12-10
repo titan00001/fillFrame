@@ -11,14 +11,14 @@ class object {
 
   }
 
-  addObject(name = "", type = "") {
+  addObject(name = "Shape" + this.objectCount, type = "") {
     // below written codes are solely for the purpose of testing
-    this.objectList.push(getShape("Circle1", "circle"));
+    this.objectList.push(getShape(name, type));
     // this.objectList.push(new Circle('Circle2', 'circle', 25));
     // this.objectList.push(new Circle('Circle3', 'circle', 30))
-    console.log(this.objectList[0]);
     this.objectCount++;
   }
+
 
   getInitialData() {
     let initialData = [];
@@ -131,6 +131,16 @@ class pathObject {
       return 0;
 
     return this.objectList[0]['temporal'].length;
+  }
+
+  getInitialData() {
+    let initialData = [];
+
+    for (let i = 0; i < this.getObjectCount(); i++) {
+      initialData.push(this.objectList[i].initial);
+    }
+
+    return initialData;
   }
 
 

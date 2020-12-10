@@ -126,7 +126,7 @@ class Line extends Shape {
 function getShape(shapeName, shapeType) {
   if(shapeType === "circle") {
     return new Circle(shapeName, 'circle');
-  } else if (shapeName === "line") {
+  } else if (shapeType === "line") {
     return new Line(shapeName, 'line');
   }
 }

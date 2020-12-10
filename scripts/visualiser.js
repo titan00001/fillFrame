@@ -1,21 +1,25 @@
-function visualize(canvasId, initialProperty, temporalProperty, redraw = true) {
-  var c = document.getElementById(canvasId);
-  var ctx = c.getContext("2d");
+function drawLine(context, temporalProperty) {
 
-  if (redraw) ctx.clearRect(0, 0, c.width, c.height);
+    context.beginPath();
+    context.moveTo(temporalProperty['headX'], temporalProperty['headY']);
+    context.lineTo(temporalProperty['tailX'], temporalProperty['tailY']);
+    context.stroke();
+    context.closePath();
 
-  ctx.beginPath();
+}
 
-  ctx.arc(
-    temporalProperty["posX"],
-    temporalProperty["posY"],
-    temporalProperty["radius"],
+function drawCircle(context, temporalProperty) {
+
+  context.beginPath();
+
+  context.arc(temporalProperty['posX'],
+    temporalProperty['posY'],
+    temporalProperty['radius'],
     0,
-    Math.PI * 2
-  );
+    Math.PI * 2);
 
-  ctx.stroke();
-  ctx.closePath();
+    context.stroke();
+    context.closePath();
 }
 
 function visualizeMulti(canvasId, initialPropertyArray, temporalPropertyArray) {
@@ -25,18 +29,11 @@ function visualizeMulti(canvasId, initialPropertyArray, temporalPropertyArray) {
   ctx.clearRect(0, 0, c.width, c.height);
 
   temporalPropertyArray.forEach((temporalProperty, index) => {
-    ctx.beginPath();
-
-    ctx.arc(
-      temporalProperty["posX"],
-      temporalProperty["posY"],
-      temporalProperty["radius"],
-      0,
-      Math.PI * 2
-    );
-
-    ctx.stroke();
-    ctx.closePath();
+    if(initialPropertyArray[index].type === 'circle'){
+      drawCircle(ctx, temporalProperty);
+    } else if(initialPropertyArray[index].type === 'line'){
+      drawLine(ctx, temporalProperty);
+    }
   });
 
   return c;
@@ -121,7 +118,7 @@ async function visualizeAnimation(data, i = 1) {
   //   data.getTimeById(i));
 
   animate(
-    data.initial,
+    data.getInitialData(),
     data.getTemporalArrayById(i-1),
     data.getTimeById(i - 1),
     data.getTimeById(i),
@@ -139,7 +136,7 @@ async function visualizeAnimation(data, i = 1) {
   // animate(data.initial, data.temporal[i-1], data.temporal[i-1].time, data.temporal[i].time, timeInterval);
 }
 
-export { visualize, visualizeAnimation, visualizeMulti };
+export { visualizeAnimation, visualizeMulti };
 
 // problem1 :
 // while using time segment wise rendering two blocks were called at same instant
@@ -151,3 +148,28 @@ export { visualize, visualizeAnimation, visualizeMulti };
 // problem2:
 // object state is changed after clicking preview,
 // pass the duplicate copy of data, preview might remain functional
+
+
+/*
+  add drawLine, drawCircle function for visualizeMulti
+*/
+
+// function visualize(canvasId, initialProperty, temporalProperty, redraw = true) {
+//   var c = document.getElementById(canvasId);
+//   var ctx = c.getContext("2d");
+
+//   if (redraw) ctx.clearRect(0, 0, c.width, c.height);
+
+//   ctx.beginPath();
+
+//   ctx.arc(
+//     temporalProperty["posX"],
+//     temporalProperty["posY"],
+//     temporalProperty["radius"],
+//     0,
+//     Math.PI * 2
+//   );
+
+//   ctx.stroke();
+//   ctx.closePath();
+// }

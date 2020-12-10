@@ -82,15 +82,18 @@ animation loop -> visualizer ->  display on canvas
 
 # Specs for phase 3:
 1. [ ] Add trapezium shape
-  1. [ ] Add coordinates
-  2. [ ] Remove coordinates
-  3. [ ] Edit coordinates
+     1. [ ] Add coordinates
+     2. [ ] Remove coordinates
+     3. [ ] Edit coordinates
 2. [x] Add line
-  1. [x] Add line class in geometry
-  2. [x] make getShape function to delegate instatiation based on factory pattern
-  3. [x] Make shape class as abstract class
-  4. [x] Refactored circle class
-3. [ ] Add visualization for line
+     1. [x] Add line class in geometry
+     2. [x] make getShape function to delegate instatiation based on factory pattern
+     3. [x] Make shape class as abstract class
+     4. [x] Refactored circle class
+3. [x] Add visualization for line
+   1. [x] Refactor visualize function for drawing multiple shapes
+   2. [x] Add function to visualize line
+   3. [x] Added getInitialData in pathObject class to get shape type
 4. [ ] Show the object/ hide the object across all frame
 5. [ ] Delete the object across all the frames
 6. [ ] Add different path to choose from: linear, radial, exponential, logarithmic

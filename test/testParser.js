@@ -49,7 +49,18 @@ const addCircle = document.querySelector("#addCircle");
 addCircle.addEventListener("click", () => {
   if (superObject.getTemporalCount() < 2) {
     console.log("added circle");
-    superObject.addObject();
+    superObject.addObject("Circle1", 'circle');
+    superObject.onUpdate();
+  } else {
+    console.log("Cannot add object in more than 1 slide.");
+  }
+});
+
+const addLine = document.querySelector("#addLine");
+addLine.addEventListener("click", () => {
+  if (superObject.getTemporalCount() < 2) {
+    console.log("added line");
+    superObject.addObject("Line1", 'line');
     superObject.onUpdate();
   } else {
     console.log("Cannot add object in more than 1 slide.");
@@ -67,7 +78,7 @@ getPreviewBtn.addEventListener('click', () => {
 
   // console.log(getTemporalDataById(clonedSuperObject, clonedSuperObject.length, 0));
   const pathObject1 = new pathObject(clonedSuperObject);
-  // console.log(pathObject1, pathObject1.getTemporalLength(), pathObject1.getObjectCount);
+  console.log(pathObject1.getInitialData());
 
   visualizeAnimation(pathObject1);
 

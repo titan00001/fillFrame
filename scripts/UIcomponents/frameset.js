@@ -1,4 +1,4 @@
-import { visualize, visualizeMulti } from "../visualiser.js";
+import { visualizeMulti } from "../visualiser.js";
 import { designPane } from "./designPane.js";
 
 class frameSet {
@@ -67,10 +67,12 @@ class frameSet {
       this.makeFrameCard(i);
 
       // console.log(this.superObject.getTemporalDataById(i));
-      this.superObject.getTemporalDataById(i).forEach((property, index) => {
-        // console.log(property, index, i);
-        visualize(i, initialData[index], property, false);
-      });
+      // this.superObject.getTemporalDataById(i).forEach((property, index) => {
+      //   // console.log(property, index, i);
+      //   visualize(i, initialData[index], property, false);
+      // });
+
+      visualizeMulti(i, initialData, this.superObject.getTemporalDataById(i));
     }
 
     this.setSelect(this.selectedFrameId);
