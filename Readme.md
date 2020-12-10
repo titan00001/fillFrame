@@ -85,10 +85,11 @@ animation loop -> visualizer ->  display on canvas
   1. [ ] Add coordinates
   2. [ ] Remove coordinates
   3. [ ] Edit coordinates
-2. [] Add line
-  1. [ ] Add line class in geometry
-  2. [ ] make getShape function to delegate instatiation based on factory pattern
-  3. [ ] Make shape class as abstract class
+2. [x] Add line
+  1. [x] Add line class in geometry
+  2. [x] make getShape function to delegate instatiation based on factory pattern
+  3. [x] Make shape class as abstract class
+  4. [x] Refactored circle class
 3. [ ] Add visualization for line
 4. [ ] Show the object/ hide the object across all frame
 5. [ ] Delete the object across all the frames

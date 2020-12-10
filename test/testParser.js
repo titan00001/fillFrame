@@ -74,8 +74,9 @@ getPreviewBtn.addEventListener('click', () => {
 
 });
 
-/* TypeError: cyclic object value */
-
+// line test
+// const lineState1 = {'headX': 20, 'headY': 30, 'tailX': 40, 'tailY': 50, 'time': 0 };
+// const lineState2 = {'headX': 60, 'headY': 70, 'tailX': 80, 'tailY': 90, 'time': 3 };
 
 console.log("Todo List");
 console.log(
@@ -98,7 +99,7 @@ console.log(
   "Done: build preview engine to animate multiple object, currently supports single object"
 );
 console.log(
-  "add option to change the position of object using mouse: designCanvas, opbject updation"
+  "add option to change the position of object using mouse: designCanvas, object updation"
 );
 
 // Test: singleton function

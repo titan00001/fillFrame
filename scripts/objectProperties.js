@@ -1,4 +1,4 @@
-import { Circle } from "./geometry.js";
+import { getShape } from "./geometry.js";
 
 class object {
   constructor() {
@@ -8,15 +8,15 @@ class object {
 
     this.observer = new objectObserver();
 
-    // test
-    // this.addObject();
+
   }
 
   addObject(name = "", type = "") {
     // below written codes are solely for the purpose of testing
-    this.objectList.push(new Circle("Circle1", "circle"));
+    this.objectList.push(getShape("Circle1", "circle"));
     // this.objectList.push(new Circle('Circle2', 'circle', 25));
     // this.objectList.push(new Circle('Circle3', 'circle', 30))
+    console.log(this.objectList[0]);
     this.objectCount++;
   }
 
@@ -54,14 +54,13 @@ class object {
   }
 
   addTemporalData(id, instantProperty) {
-    // add the temporal data at given index in temporal Array
+    // add the temporal data at given index in temporal Array deep copy
+
+    const instantPropertyCopy = JSON.parse(JSON.stringify(instantProperty));
     for (let i = 0; i < this.objectCount; i++) {
-      // console.log(instantProperty[i]);
+      // console.log(instantProperty);
       this.objectList[i].addTemporalProperty(
-        instantProperty[i]["posX"],
-        instantProperty[i]["posY"],
-        instantProperty[i]["radius"],
-        instantProperty[i]["time"],
+        instantPropertyCopy[i],
         id
       );
     }
