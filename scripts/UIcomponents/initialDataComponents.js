@@ -37,7 +37,7 @@ class initialDataComponent {
     this.initialDataList = initialDataList;
     this.temporalDataList = temporalDataList;
     this.selectedObjectId = newSelectedObject;
-    console.log(initialDataList);
+    // console.log(initialDataList);
     this.temporalComponent.update(this.temporalDataList, this.selectedObjectId);
     this.display();
   }
