@@ -37,7 +37,7 @@ class initialDataComponent {
     this.initialDataList = initialDataList;
     this.temporalDataList = temporalDataList;
     this.selectedObjectId = newSelectedObject;
-    // console.log(this.selectedObjectId);
+    console.log(initialDataList);
     this.temporalComponent.update(this.temporalDataList, this.selectedObjectId);
     this.display();
   }
@@ -68,6 +68,7 @@ class initialDataComponent {
   }
 
   itemDisplay(itemId, item, isVisible, isDeleted, parentNodeId) {
+    console.log("called");
     const parentNode = document.getElementById(parentNodeId);
 
     const container = document.createElement("div");
@@ -81,7 +82,7 @@ class initialDataComponent {
     visibleBtn.textContent = isVisible ? "Hide" : "Show";
 
     const removeBtn = document.createElement("button");
-    removeBtn.textContent = isDeleted ? "Restore" : "Delete";
+    removeBtn.textContent = "Delete";
 
     const selectBtn = document.createElement("button");
     selectBtn.textContent =
@@ -99,8 +100,12 @@ class initialDataComponent {
 
     removeBtn.addEventListener("click", () => {
       this.removed[itemId] = !isDeleted;
-
-      this.display();
+      object1.removeObjectById(itemId);
+      if(itemId === this.selectedObjectId) {
+        object1.onUpdate({"currentObject" : 0});
+      } else {
+        object1.onUpdate({"currentObject" : this.selectedObjectId});
+      }
     });
 
     selectBtn.addEventListener("click", () => {

@@ -56,7 +56,7 @@ class designPane {
     this.initialDataPane.update(this.initialData, this.temporalData, this.selectedObject);
 
     this.displayCanvas();
-    this.displayInitialDataPane();
+    // this.displayInitialDataPane();
     // this.displayTemporalDataPane();
   }
 }

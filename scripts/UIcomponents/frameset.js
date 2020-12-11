@@ -74,8 +74,12 @@ class frameSet {
 
       visualizeMulti(i, initialData, this.superObject.getTemporalDataById(i));
     }
-
-    this.setSelect(this.selectedFrameId);
+    // for bug 6:
+    if(this.frameCount > 0) {
+        this.setSelect(this.selectedFrameId);
+    } else {
+        this.designPane.update(this.displayCurrentFrame(), 0, 0);
+    }
   }
 
   displayCurrentFrame() {

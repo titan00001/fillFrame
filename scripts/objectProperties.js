@@ -90,6 +90,12 @@ class object {
     return clonedObject;
   }
 
+  removeObjectById(id) {
+    // console.log(id + "to be deleted");
+    this.objectList.splice(id, 1);
+    this.objectCount--;
+  }
+
 }
 
 class pathObject {

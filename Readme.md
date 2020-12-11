@@ -33,11 +33,11 @@ animation loop -> visualizer ->  display on canvas
     - [x] move frame component into objectProperty class, frames will be display of object's temporal properties
     - [x] move design Canvas into objectProperty as view component of selected frames
 - phase 3: add option of line, rectangle
-  - Add other shapes
-  - refactor visualizer to draw different shapes
-  - make hide/show functionality
-  - make delete/restore functionality
-  - save the selected object after each update
+  - [x] Add other shapes
+  - [x] refactor visualizer to draw different shapes
+  - [ ] make hide/show functionality
+  - [x] make delete/restore functionality
+  - [x] save the selected object after each update
   - highlight the selected object on design canvas
   - select the object using mouse over design canvas
 
@@ -50,9 +50,9 @@ animation loop -> visualizer ->  display on canvas
   - [x] behaviour: selectFrame, add frame, remove frame 
   - [x] designPane: object Property, selected object
   - [x] behaviour: edit object property
-- [ ] refactor visualize : 
-  - [ ] add for many objects drawing, 
-  - [ ] adjust frame for depicting multiple objects
+- [x] refactor visualize : 
+  - [x] add for many objects drawing, 
+  - [x] adjust frame for depicting multiple objects
 ---
 
 # Thoughts on React.js
@@ -95,7 +95,7 @@ animation loop -> visualizer ->  display on canvas
    2. [x] Add function to visualize line
    3. [x] Added getInitialData in pathObject class to get shape type
 4. [ ] Show the object/ hide the object across all frame
-5. [ ] Delete the object across all the frames
+5. [x] Delete the object across all the frames
 6. [ ] Add different path to choose from: linear, radial, exponential, logarithmic
 7. [ ] Add rotation functionality by engine.
 
@@ -107,3 +107,5 @@ animation loop -> visualizer ->  display on canvas
 3. [x] Design pane **calling both** initial and temporal component, whereas temporal property component is strictly child of initial property component.
 4. **Not showing alert** to user on window.
 5. Temporal property container **falls behind** the design canvas on resizing of window.
+6. [x] On deleting a lone object, initial Data Pane does not get updated.
+7. On deletion of a lone object in presence of multiple frame, selected frame changes its value to unknown.(Needs to be debugged)
