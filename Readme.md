@@ -103,9 +103,9 @@ animation loop -> visualizer ->  display on canvas
 
 # Bugs
 1. [x] Selected object reverts back to point the first object in Initial property container, on **updating Temporal property** and **changing frame count**.
-2. Selected object reverts back to point the first object in Initial property container, on **addition of shapes**.
+2. [x] Selected object reverts back to point the first object in Initial property container, on **addition of shapes**.
 3. [x] Design pane **calling both** initial and temporal component, whereas temporal property component is strictly child of initial property component.
 4. **Not showing alert** to user on window.
 5. Temporal property container **falls behind** the design canvas on resizing of window.
 6. [x] On deleting a lone object, initial Data Pane does not get updated.
-7. On deletion of a lone object in presence of multiple frame, selected frame changes its value to unknown.(Needs to be debugged)
+7. [x] On deletion of a lone object in presence of multiple frame, selected frame changes its value to unknown.(Needs to be debugged)

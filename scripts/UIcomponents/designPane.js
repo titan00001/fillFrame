@@ -1,6 +1,6 @@
 import { visualizeMulti } from "../visualiser.js";
 import { initialDataComponent } from "./initialDataComponents.js";
-import { temporalDataComponent } from "./temporalDataComponent.js";
+// import { temporalDataComponent } from "./temporalDataComponent.js";
 
 /*
 display list of objects as table: object, visibility, delete
@@ -20,10 +20,10 @@ class designPane {
       displayData["initial"],
       displayData["current"]
     );
-    this.temporalDataPane = new temporalDataComponent(
-      displayData["current"],
-      currentSelected
-    );
+    // this.temporalDataPane = new temporalDataComponent(
+    //   displayData["current"],
+    //   currentSelected
+    // );
     this.update(displayData, currentSelected);
   }
 
@@ -38,7 +38,7 @@ class designPane {
   }
 
   displayTemporalDataPane() {
-    this.temporalDataPane.update(this.temporalData);
+    // this.temporalDataPane.update(this.temporalData);
   }
 
   displayNavBar() {

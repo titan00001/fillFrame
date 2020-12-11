@@ -76,9 +76,11 @@ class frameSet {
     }
     // for bug 6:
     if(this.frameCount > 0) {
-        this.setSelect(this.selectedFrameId);
+      this.setSelect(this.selectedFrameId);
     } else {
-        this.designPane.update(this.displayCurrentFrame(), 0, 0);
+      // for bug 7: change selected frame to 0 before dissolving all frames
+      this.selectedFrameId = 0;
+      this.designPane.update(this.displayCurrentFrame(), this.selectedFrameId, 0);
     }
   }
 
@@ -104,10 +106,10 @@ class frameSet {
 
     const currentFrame = document.getElementById(newSelect);
     if(currentFrame !== null) {
-        this.selectedFrameId = newSelect;
-        console.log(this.selectedFrameId, this.selectedObject);
-        currentFrame.classList.add('class','frame-selected');
-    this.designPane.update(this.displayCurrentFrame(), this.selectedFrameId, this.selectedObject);
+      this.selectedFrameId = newSelect;
+      console.log(this.selectedFrameId, this.selectedObject);
+      currentFrame.classList.add('class','frame-selected');
+      this.designPane.update(this.displayCurrentFrame(), this.selectedFrameId, this.selectedObject);
     }
     
   }
