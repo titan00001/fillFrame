@@ -101,25 +101,9 @@ getPreviewBtn.addEventListener('click', () => {
 // const lineState2 = {'headX': 60, 'headY': 70, 'tailX': 80, 'tailY': 90, 'time': 3 };
 
 console.log("Todo List");
-console.log(
-  "Done: Change time view: remove time visibility from temporal data, change timeLabel to input box in frameset"
-);
-console.log("Done: Add title of temporal and initial to respective container");
-console.log(
-  "Done: add change on keypress event functionality on timeInput, improved it by changing all keypress event with focusout"
-);
-console.log(
-  "Done: style the webpage: css, setAttributes, inline css. \n 1. Change initial Data view position to navbar \n 2. highlight selected frame and object"
-);
-console.log("Done: style navbar: add shapes, preview, view initial Data");
-console.log("Done: Added radius to temporal property array of circle");
-console.log("Done: Make prototype class with relevant function");
 console.log("build hide and remove object functionality");
 console.log("change object class to keep track of shapes added into it");
 console.log("add functions to make multiple shapes");
-console.log(
-  "Done: build preview engine to animate multiple object, currently supports single object"
-);
 console.log(
   "add option to change the position of object using mouse: designCanvas, object updation"
 );
