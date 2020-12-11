@@ -22,6 +22,18 @@ function drawCircle(context, temporalProperty) {
     context.closePath();
 }
 
+function drawTriangle(context, temporalProperty) {
+
+  context.beginPath();
+  context.moveTo(temporalProperty['X1'], temporalProperty['Y1']);
+  context.lineTo(temporalProperty['X2'], temporalProperty['Y2']);
+  context.lineTo(temporalProperty['X3'], temporalProperty['Y3']);
+  context.lineTo(temporalProperty['X1'], temporalProperty['Y1']);
+  context.stroke();
+  context.closePath();
+
+}
+
 function visualizeMulti(canvasId, initialPropertyArray, temporalPropertyArray) {
   var c = document.getElementById(canvasId);
   var ctx = c.getContext("2d");
@@ -33,6 +45,8 @@ function visualizeMulti(canvasId, initialPropertyArray, temporalPropertyArray) {
       drawCircle(ctx, temporalProperty);
     } else if(initialPropertyArray[index].type === 'line'){
       drawLine(ctx, temporalProperty);
+    } else if(initialPropertyArray[index].type === 'triangle'){
+      drawTriangle(ctx, temporalProperty);
     }
   });
 

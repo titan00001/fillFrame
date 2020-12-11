@@ -122,12 +122,25 @@ class Line extends Shape {
 
 }
 
+class Triangle extends Shape {
+
+  constructor(name, type) {
+
+    super(name, type);
+
+    this.addTemporalProperty({'X1': 40, 'Y1': 50, 'X2': 20, 'Y2' : 30, 'X3': 30, 'Y3' : 30, 'time': 0}, 0);
+  }
+
+}
+
 
 function getShape(shapeName, shapeType) {
   if(shapeType === "circle") {
     return new Circle(shapeName, 'circle');
   } else if (shapeType === "line") {
     return new Line(shapeName, 'line');
+  } else if(shapeType === "triangle") {
+    return new Triangle(shapeName, 'triangle'); 
   }
 }
 

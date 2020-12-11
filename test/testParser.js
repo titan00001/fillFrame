@@ -67,6 +67,17 @@ addLine.addEventListener("click", () => {
   }
 });
 
+const addTriangle = document.querySelector("#addTriangle");
+addTriangle.addEventListener("click", () => {
+  if (superObject.getTemporalCount() < 2) {
+    console.log("added Triangle");
+    superObject.addObject("Triangle1", 'triangle');
+    superObject.onUpdate();
+  } else {
+    console.log("Cannot add object in more than 1 slide.");
+  }
+});
+
 const getPreviewBtn = document.querySelector("#getPreview");
 getPreviewBtn.addEventListener('click', () => {
   
