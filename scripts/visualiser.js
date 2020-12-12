@@ -1,6 +1,9 @@
-function drawLine(context, temporalProperty) {
+function drawLine(context, temporalProperty, isSelected = false) {
 
     context.beginPath();
+    if(isSelected) context.strokeStyle = "#6495ED";
+    else context.strokeStyle = "#000000";
+
     context.moveTo(temporalProperty['headX'], temporalProperty['headY']);
     context.lineTo(temporalProperty['tailX'], temporalProperty['tailY']);
     context.stroke();
@@ -8,9 +11,11 @@ function drawLine(context, temporalProperty) {
 
 }
 
-function drawCircle(context, temporalProperty) {
+function drawCircle(context, temporalProperty, isSelected = false) {
 
   context.beginPath();
+  if(isSelected) context.strokeStyle = "#6495ED";
+  else context.strokeStyle = "#000000";
 
   context.arc(temporalProperty['posX'],
     temporalProperty['posY'],
@@ -22,9 +27,12 @@ function drawCircle(context, temporalProperty) {
     context.closePath();
 }
 
-function drawTriangle(context, temporalProperty) {
+function drawTriangle(context, temporalProperty, isSelected = false) {
 
   context.beginPath();
+  if(isSelected) context.strokeStyle = "#6495ED";
+  else context.strokeStyle = "#000000";
+
   context.moveTo(temporalProperty['X1'], temporalProperty['Y1']);
   context.lineTo(temporalProperty['X2'], temporalProperty['Y2']);
   context.lineTo(temporalProperty['X3'], temporalProperty['Y3']);
@@ -34,7 +42,7 @@ function drawTriangle(context, temporalProperty) {
 
 }
 
-function visualizeMulti(canvasId, initialPropertyArray, temporalPropertyArray) {
+function visualizeMulti(canvasId, initialPropertyArray, temporalPropertyArray, selectedObject = null) {
   var c = document.getElementById(canvasId);
   var ctx = c.getContext("2d");
 
@@ -42,11 +50,11 @@ function visualizeMulti(canvasId, initialPropertyArray, temporalPropertyArray) {
 
   temporalPropertyArray.forEach((temporalProperty, index) => {
     if(initialPropertyArray[index].type === 'circle'){
-      drawCircle(ctx, temporalProperty);
+      drawCircle(ctx, temporalProperty, index === selectedObject);
     } else if(initialPropertyArray[index].type === 'line'){
-      drawLine(ctx, temporalProperty);
+      drawLine(ctx, temporalProperty, index === selectedObject);
     } else if(initialPropertyArray[index].type === 'triangle'){
-      drawTriangle(ctx, temporalProperty);
+      drawTriangle(ctx, temporalProperty, index === selectedObject);
     }
   });
 

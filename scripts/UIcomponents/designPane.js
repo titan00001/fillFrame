@@ -29,7 +29,8 @@ class designPane {
 
   displayCanvas() {
     // console.log(property, index, i);
-    visualizeMulti("design-canvas", this.initialData, this.temporalData);
+    visualizeMulti("design-canvas", this.initialData, this.temporalData, this.selectedObject);
+    // console.log(this.selectedObject);
     // onclick on canvas: select nearest object
   }
 

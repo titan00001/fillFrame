@@ -98,7 +98,7 @@ animation loop -> visualizer ->  display on canvas
 5. [x] Delete the object across all the frames
 6. [ ] Add different path to choose from: linear, radial, exponential, logarithmic
 7. [ ] Add rotation functionality by engine.
-
+8. [x] Highlight the selected object
 
 
 # Bugs
