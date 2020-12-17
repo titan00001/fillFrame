@@ -52,8 +52,8 @@ addCircle.addEventListener("click", () => {
     superObject.addObject("Circle1", 'circle');
     superObject.onUpdate();
   } else {
-    console.log("Cannot add object in more than 1 slide.");
-    alert("Cannot add object in more than 1 slide.");
+    console.log("Cannot add object in more than 1 slide. Please delete all slides except first one to add");
+    alert("Cannot add object in more than 1 slide. Please delete all slides except first one to add");
   }
 });
 
@@ -64,8 +64,8 @@ addLine.addEventListener("click", () => {
     superObject.addObject("Line1", 'line');
     superObject.onUpdate();
   } else {
-    console.log("Cannot add object in more than 1 slide.");
-    alert("Cannot add object in more than 1 slide.");
+    console.log("Cannot add object in more than 1 slide. Please delete all slides except first one to add");
+    alert("Cannot add object in more than 1 slide. Please delete all slides except first one to add");
   }
 });
 
@@ -76,8 +76,8 @@ addTriangle.addEventListener("click", () => {
     superObject.addObject("Triangle1", 'triangle');
     superObject.onUpdate();
   } else {
-    console.log("Cannot add object in more than 1 slide.");
-    alert("Cannot add object in more than 1 slide.");
+    console.log("Cannot add object in more than 1 slide. Please delete all slides except first one to add");
+    alert("Cannot add object in more than 1 slide. Please delete all slides except first one to add");
   }
 });
 

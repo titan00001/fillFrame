@@ -113,14 +113,16 @@ animation loop -> visualizer ->  display on canvas
 
 
 ## Issues
-- Bug 8: 
+1.[x] Bug 8: 
   - event: Deletion of first slide
   - effect: First slide gets time other than 0, time in first Temporal Data of each object takes value other than 0
   - Direct Problem: Inconsistency in animation
   - Solution:
     - Alert user to change the value of time.
-    - Change the value and alert the user.
+    - [x] Change the value and alert the user.
 
-- Selection using mouse: Design phase
+2. Selection using mouse: Design phase
   - Progress: 
     - Added mouse click feature over design canvas
+
+3. [x] Display Alert for adding object in multiple frame: for improving user experience
