@@ -53,6 +53,7 @@ addCircle.addEventListener("click", () => {
     superObject.onUpdate();
   } else {
     console.log("Cannot add object in more than 1 slide.");
+    alert("Cannot add object in more than 1 slide.");
   }
 });
 
@@ -64,6 +65,7 @@ addLine.addEventListener("click", () => {
     superObject.onUpdate();
   } else {
     console.log("Cannot add object in more than 1 slide.");
+    alert("Cannot add object in more than 1 slide.");
   }
 });
 
@@ -75,6 +77,7 @@ addTriangle.addEventListener("click", () => {
     superObject.onUpdate();
   } else {
     console.log("Cannot add object in more than 1 slide.");
+    alert("Cannot add object in more than 1 slide.");
   }
 });
 

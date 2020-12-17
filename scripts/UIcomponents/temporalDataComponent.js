@@ -18,7 +18,7 @@ class temporalDataComponent {
   update(temporalDataList, selectedObjectId) {
     this.temporalDataList = temporalDataList;
     this.changeSelection(selectedObjectId);
-    console.log(selectedObjectId);
+    console.log("Selcted ObjectId" + selectedObjectId);
     this.display();
   }
 

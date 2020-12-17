@@ -35,10 +35,17 @@ class frameSet {
     // removes the selectedFrame
     if (this.frameCount === 1) {
       console.log("Cannot delete only frame");
+      alert("Cannot delete the only frame");
       return;
     }
     // let id = this.selectedFrameId;
+    if(id === 0){
+      alert("Changing the time of first frame to 0, to avoid any issues with animation");
+      this.superObject.changeTimeById(id+1, 0);
+    }
+
     this.superObject.removeTemporalDataById(id);
+    this.superObject.onUpdate();
   }
 
   display() {
@@ -72,7 +79,7 @@ class frameSet {
       //   visualize(i, initialData[index], property, false);
       // });
 
-      visualizeMulti(i, initialData, this.superObject.getTemporalDataById(i));
+      visualizeMulti(document.getElementById(i), initialData, this.superObject.getTemporalDataById(i));
     }
     // for bug 6:
     if(this.frameCount > 0) {
@@ -107,7 +114,7 @@ class frameSet {
     const currentFrame = document.getElementById(newSelect);
     if(currentFrame !== null) {
       this.selectedFrameId = newSelect;
-      console.log(this.selectedFrameId, this.selectedObject);
+      console.log("selected frame:" + this.selectedFrameId, "selected object:" +  this.selectedObject);
       currentFrame.classList.add('class','frame-selected');
       this.designPane.update(this.displayCurrentFrame(), this.selectedFrameId, this.selectedObject);
     }

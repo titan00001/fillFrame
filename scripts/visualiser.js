@@ -42,11 +42,11 @@ function drawTriangle(context, temporalProperty, isSelected = false) {
 
 }
 
-function visualizeMulti(canvasId, initialPropertyArray, temporalPropertyArray, selectedObject = null) {
-  var c = document.getElementById(canvasId);
-  var ctx = c.getContext("2d");
+function visualizeMulti(canvas, initialPropertyArray, temporalPropertyArray, selectedObject = null) {
+  
+  var ctx = canvas.getContext("2d");
 
-  ctx.clearRect(0, 0, c.width, c.height);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   temporalPropertyArray.forEach((temporalProperty, index) => {
     if(initialPropertyArray[index].type === 'circle'){
@@ -58,7 +58,7 @@ function visualizeMulti(canvasId, initialPropertyArray, temporalPropertyArray, s
     }
   });
 
-  return c;
+  return canvas;
 }
 
 function animate(
@@ -82,7 +82,7 @@ function animate(
   }
   // console.log(time, currentStateArray);
   // visualize("preview", initialState, currentState);
-  visualizeMulti("design-canvas", initialState, currentStateArray);
+  visualizeMulti(document.getElementById("design-canvas"), initialState, currentStateArray);
 
   if (time < endTime) {
     window.requestAnimationFrame(() => {
@@ -177,10 +177,10 @@ export { visualizeAnimation, visualizeMulti };
 */
 
 // function visualize(canvasId, initialProperty, temporalProperty, redraw = true) {
-//   var c = document.getElementById(canvasId);
-//   var ctx = c.getContext("2d");
+//   var canvas = document.getElementById(canvasId);
+//   var ctx = canvas.getContext("2d");
 
-//   if (redraw) ctx.clearRect(0, 0, c.width, c.height);
+//   if (redraw) ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 //   ctx.beginPath();
 

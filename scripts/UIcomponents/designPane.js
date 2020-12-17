@@ -29,9 +29,14 @@ class designPane {
 
   displayCanvas() {
     // console.log(property, index, i);
-    visualizeMulti("design-canvas", this.initialData, this.temporalData, this.selectedObject);
+    var canvas = document.getElementById("design-canvas");
+    visualizeMulti(canvas, this.initialData, this.temporalData, this.selectedObject);
     // console.log(this.selectedObject);
     // onclick on canvas: select nearest object
+    canvas.addEventListener('click', (e) => {
+      const rect = canvas.getBoundingClientRect();
+      console.log(Math.floor(e.clientX - rect.left), Math.floor(e.clientY - rect.top));
+    });
   }
 
   displayInitialDataPane() {

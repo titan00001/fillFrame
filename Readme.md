@@ -38,7 +38,7 @@ animation loop -> visualizer ->  display on canvas
   - [ ] make hide/show functionality
   - [x] make delete/restore functionality
   - [x] save the selected object after each update
-  - highlight the selected object on design canvas
+  - [x] highlight the selected object on design canvas
   - select the object using mouse over design canvas
 
 
@@ -105,7 +105,22 @@ animation loop -> visualizer ->  display on canvas
 1. [x] Selected object reverts back to point the first object in Initial property container, on **updating Temporal property** and **changing frame count**.
 2. [x] Selected object reverts back to point the first object in Initial property container, on **addition of shapes**.
 3. [x] Design pane **calling both** initial and temporal component, whereas temporal property component is strictly child of initial property component.
-4. **Not showing alert** to user on window.
+4. [x] **Not showing alert** to user on window.
 5. Temporal property container **falls behind** the design canvas on resizing of window.
 6. [x] On deleting a lone object, initial Data Pane does not get updated.
 7. [x] On deletion of a lone object in presence of multiple frame, selected frame changes its value to unknown.(Needs to be debugged)
+8. [x] On deletion of the first slide, succeeding slides need to adjust the time.
+
+
+## Issues
+- Bug 8: 
+  - event: Deletion of first slide
+  - effect: First slide gets time other than 0, time in first Temporal Data of each object takes value other than 0
+  - Direct Problem: Inconsistency in animation
+  - Solution:
+    - Alert user to change the value of time.
+    - Change the value and alert the user.
+
+- Selection using mouse: Design phase
+  - Progress: 
+    - Added mouse click feature over design canvas
